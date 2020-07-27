@@ -1,82 +1,86 @@
 require 'ruby2d'
 
-set title: "Hello World"
-
-#     set background: 'black'
-    
-    # define square
-    sq = Square.new(x: 10, y: 20, size: 25, color: 'blue')
-    
-    #define init speed + direction
-    x_speed = 0
-    y_speed = 0
-
-    #define action when key pressed
-
-    on :key_down do |event|
-        if event.key == 'a'
-            x_speed = -2
-            y_speed = 0
-            sq.color('red')
-            s.size = 100
-        elsif event.key == 'd'
-            x_speed = 2
-            y_speed = 0
-            sq.color('purple')
-            s.size = 100
-        elsif event.key == 's'
-            x_speed = 0
-            y_speed = -2
-            sq.color('green')
-            s.size = 100
-        elsif event.key == 'w'
-            x_speed = 0
-            y_speed = 2
-            sq.color('yellow')
-            s.size = 100
-        end
-    end    
-    
-    
-    
-    update do
-        sq.x += x_speed
-        sq.y += y_speed
+set title: "battleship"
+set background: '#0e088e'
+l = Line.new(
+    x1: 85, y1: 40,
+    x2: 85, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l1 = Line.new(
+    x1: l.x1 + 50, y1: 40,
+    x2: l.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l2 = Line.new(
+    x1: l1.x1 + 50, y1: 40,
+    x2: l1.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l3 = Line.new(
+    x1: l2.x1 + 50, y1: 40,
+    x2: l2.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l4 = Line.new(
+    x1: l3.x1 + 50, y1: 40,
+    x2: l3.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l5 = Line.new(
+    x1: l4.x1 + 50, y1: 40,
+    x2: l4.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l6 = Line.new(
+    x1: l5.x1 + 50, y1: 40,
+    x2: l5.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l7 = Line.new(
+    x1: l6.x1 + 50, y1: 40,
+    x2: l6.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l8 = Line.new(
+    x1: l7.x1 + 50, y1: 40,
+    x2: l7.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+l9 = Line.new(
+    x1: l8.x1 + 50, y1: 40,
+    x2: l8.x2 + 50, y2: 440,
+    width: 2,
+    color: 'white',
+)
+lh1 = Line.new(
+    x1: l.x1, y1: 40,
+    x2: l9.x1, y2: 40,
+    width: 2,
+    color: 'white',
+    z: 1
+)
+lh2 = Line.new(
+    x1: lh1.x1, y1: lh1.y1 + 50,
+    x2: lh1.x2, y2: lh1.y2 + 50,
+    width: 2,
+    color: 'white',
+    z: 1
+)
+on :key_down do |e|
+    if e.key == '1'
+        close
     end
- 
+end
+  
 show
 
-# Define a square shape.
-# @square = Square.new(x: 10, y: 20, size: 25, color: 'blue')
-
-# # Define the initial speed (and direction).
-# @x_speed = 0
-# @y_speed = 0
-
-# # Define what happens when a specific key is pressed.
-# # Each keypress influences on the  movement along the x and y axis.
-# on :key_down do |event|
-#   if event.key == 'a'
-#     @x_speed = -2
-#     @y_speed = 0
-#   elsif event.key == 'd'
-#     @x_speed = 2
-#     @y_speed = 0
-#   elsif event.key == 's'
-#     @x_speed = 0
-#     @y_speed = -2
-#   elsif event.key == 'w'
-#     @x_speed = 0
-#     @y_speed = 2
-#   elsif event.key == 'p'
-#     @x_speed = 0
-#     @y_speed = 0
-#   end
-# end
-
-# update do
-#   @square.x += @x_speed
-#   @square.y += @y_speed
-# end
-
-# show
